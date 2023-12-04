@@ -13,7 +13,7 @@ import javax.persistence.Column;
 public class UserDTO {
     private String document;
 
-      private String name;
+    private String name;
 
     private String email;
 

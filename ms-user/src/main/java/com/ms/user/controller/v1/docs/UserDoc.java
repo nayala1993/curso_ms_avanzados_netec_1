@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.ResponseBody;
 public interface UserDoc {
 
     @Operation(summary = "create user", description = "This operation is for creating user")
-
     @ApiResponses(value= {
             @ApiResponse(
                     responseCode = "201",
@@ -30,4 +29,35 @@ public interface UserDoc {
     }
     )
     ResponseEntity create (@RequestBody UserDTO userDTO);
+
+    @Operation(summary = "List users", description = "This operation is for getting all users")
+    @ApiResponses(value= {
+            @ApiResponse(
+                    responseCode = "201",
+                    description = "List of users generate successfully",
+                    content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE)),
+            @ApiResponse(
+                    responseCode = "400",
+                    description = "bad request",
+                    content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE)
+            )
+    }
+    )
+    ResponseEntity getAll ();
+
+
+    @Operation(summary = "Get user by Id", description = "This operation is for getting a user by Id")
+    @ApiResponses(value= {
+            @ApiResponse(
+                    responseCode = "201",
+                    description = "Getting user generate successfully",
+                    content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE)),
+            @ApiResponse(
+                    responseCode = "400",
+                    description = "bad request",
+                    content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE)
+            )
+    }
+    )
+    ResponseEntity getById(String id);
 }
