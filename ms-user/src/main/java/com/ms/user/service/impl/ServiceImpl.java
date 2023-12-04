@@ -29,4 +29,10 @@ public class ServiceImpl implements IUserService {
         var user = this.userRepository.save(newUser);
         return ResponseEntity.status(HttpStatus.CREATED).body(user);
     }
+
+    @Override
+    public ResponseEntity getAll() {
+        var user= userRepository.findAll();
+        return ResponseEntity.ok(user);
+    }
 }

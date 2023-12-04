@@ -33,7 +33,7 @@ public interface UserDoc {
     @Operation(summary = "List users", description = "This operation is for getting all users")
     @ApiResponses(value= {
             @ApiResponse(
-                    responseCode = "201",
+                    responseCode = "200",
                     description = "List of users generate successfully",
                     content = @Content(mediaType = MediaType.APPLICATION_JSON_VALUE)),
             @ApiResponse(

@@ -5,4 +5,6 @@ import org.springframework.http.ResponseEntity;
 
 public interface IUserService {
     ResponseEntity create (UserDTO userDTO);
+
+    ResponseEntity getAll();
 }
